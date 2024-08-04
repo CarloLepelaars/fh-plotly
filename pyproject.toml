@@ -13,6 +13,7 @@ plotly = "^5.23.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.2"
+pandas = "^2.2.2"
 
 [build-system]
 requires = ["poetry-core"]
