@@ -44,9 +44,7 @@ def generate_line_chart():
 
 ## Contributing
 
-Feel free to open an issue or a pull request to add FastHTML Plotly functionality.
-
-Please install with `poetry install` for contributing.
+Feel free to open an issue or a pull request. Please install with `poetry install` for an editable install.
 
 ```bash
 poetry install
