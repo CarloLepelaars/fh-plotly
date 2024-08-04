@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "fh-plotly"
 version = "0.1.0"
-description = ""
+description = "Poetry in FastHTML"
 authors = ["Carlo Lepelaars <info@carlolepelaars.nl>"]
 readme = "README.md"
 

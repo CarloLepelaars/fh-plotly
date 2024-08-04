@@ -15,10 +15,7 @@ Make sure to add the right headers to your FastHTML app:
 from fasthtml.common import fast_app
 from fh_plotly import plotly_headers
 
-
-app, rt = fast_app(
-    hdrs = plotly_headers
-)
+app, rt = fast_app(hdrs=plotly_headers)
 ```
 
 This ensures that the required javascript and css files are always loaded.
@@ -44,8 +41,17 @@ def generate_line_chart():
 
 ## Contributing
 
-Feel free to open an issue or a pull request. Please install with `poetry install` for an editable install.
+Feel free to open an issue or a pull request. 
+Make sure to install with `poetry install` for an editable install with dev dependencies when working on contributions.
 
 ```bash
 poetry install
 ```
+
+To run tests:
+
+```bash
+pytest -s
+```
+
+The goal is to keep `fh-plotly` lightweight and compatible with Python 3.10+.
