@@ -6,7 +6,7 @@ authors = ["Carlo Lepelaars <info@carlolepelaars.nl>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 python-fasthtml = "^0.2.1"
 plotly = "^5.23.0"
 
