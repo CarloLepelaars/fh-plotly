@@ -25,13 +25,13 @@ This ensures that the required javascript and css files are always loaded.
 
 ## Examples
 
-Run examples/test_app.py to see the examples in action.
+Run `examples/test_app.py` to see some basic plots.
 
 ```bash
 python examples/test_app.py
 ```
 
-The gist of conversion to Plotly is with the `plotly2fasthtml` function.
+The gist of conversion to Plotly is the `plotly2fasthtml` function.
 
 ```python
 from fh_plotly import plotly2fasthtml
