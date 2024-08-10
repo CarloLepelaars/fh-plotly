@@ -161,8 +161,8 @@ buttons = [
             title="Reset the circuit")]
 
 desc = """
-The Bloch Sphere is a 3D visualization of a quantum state. 
-You can interact with the buttons (Qubit gates) to see how the state changes.
+The Bloch Sphere is a 3D visualization of a single quantum state. 
+You can interact with the buttons (Gates) to see how the state changes. See the description below for more information on what each gate represents.
 """
 
 @app.get('/')
@@ -172,10 +172,10 @@ def homepage():
                                                    Div(apply_gate(), id="chart"),
                                                    H4("Available gates"),
                                                    P("- H: Hadamard gate. Puts the state in superposition. "),
-                                                   P("- X: Pauli-X (NOT) gate. Flip around the X-Axis."),
-                                                   P("- Y: Pauli-Y (\"bit-flip\") gate. Flip around the Y-Axis."),
-                                                   P("- Z: Pauli-Z (\"phase-flip\") gate. Flip around the Z-Axis."),
+                                                   P("- X: Pauli-X (NOT) gate. Rotate 180 degrees around the X-Axis."),
+                                                   P("- Y: Pauli-Y (\"bit-flip\") gate. Rotate 180 degrees around the Y-Axis."),
+                                                   P("- Z: Pauli-Z (\"phase-flip\") gate. Rotate 180 degrees around the Z-Axis."),
                                                    P("- S: Phase gate. Rotates around the Z-axis by 90 degrees."),
-                                                   P("- T: π/8 gate. Rotates around the Z-axis by 45 degrees."),)
+                                                   P("- T: π/8 gate. Rotates around the Z-axis by 45 degrees."))
 
 serve()
