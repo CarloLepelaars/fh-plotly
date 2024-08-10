@@ -19,7 +19,7 @@ jobs:
 
       - name: Launch app
         run: |
-            pip install poetry numpy plotly
+            pip install poetry numpy plotly fasthtml
             poetry install
             python examples/bloch.py
 
