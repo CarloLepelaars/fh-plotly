@@ -1,7 +1,7 @@
 # fh-plotly
 
 ![Downloads](https://img.shields.io/pypi/dm/fh-plotly)
-![Python Version](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/carlolepelaars/fh-plotly/main/pyproject.toml&query=%24.project%5B%22requires-python%22%5D&label=python&color=blue) 
+![Python Version](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/carlolepelaars/fh-plotly/main/pyproject.toml&query=project.requires-python&label=python&color=blue) 
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
