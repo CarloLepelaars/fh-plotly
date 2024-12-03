@@ -48,3 +48,7 @@ def test_3d_surface():
     html_div = plotly2fasthtml(fig)
     assert html_div is not None
     assert isinstance(html_div, fastcore.xml.FT)
+
+
+def test_callback(server, page):
+    page.navigate("localhost:5001")
