@@ -47,7 +47,7 @@ def generate_line_chart():
 ## Contributing
 
 Feel free to open an issue or a pull request. 
-Make sure to install with `uv install` for an editable install with dev dependencies when working on contributions.
+Make sure to do an editable install with dev dependencies when working on contributions.
 
 ```bash
 pip install uv
