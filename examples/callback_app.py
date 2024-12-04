@@ -20,7 +20,7 @@ def _():
             callbacks=[OnClick(hx_post="/click", hx_target="#callback-display")],
         ),
         ft.H2("Click a marker to trigger a callback!"),
-        ft.P(id="callback-display"),
+        ft.P(id="callback-display", data_testid="callback-display"),
         cls="container",
     )
 
