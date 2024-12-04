@@ -1,5 +1,10 @@
 # fh-plotly
 
+![Downloads](https://img.shields.io/pypi/dm/fh-plotly)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 Use Plotly charts with [FastHTML](https://github.com/AnswerDotAI/fasthtml).
 
 
@@ -42,10 +47,11 @@ def generate_line_chart():
 ## Contributing
 
 Feel free to open an issue or a pull request. 
-Make sure to install with `poetry install` for an editable install with dev dependencies when working on contributions.
+Make sure to do an editable install with dev dependencies when working on contributions.
 
 ```bash
-poetry install
+pip install uv
+uv pip install -e ".[dev]"
 ```
 
 To run tests:

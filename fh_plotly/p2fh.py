@@ -4,6 +4,7 @@ from uuid import uuid4
 from plotly.io import to_json
 from fasthtml.common import Div, Script
 
+
 plotly_headers = [
     Script(src="https://cdn.plot.ly/plotly-latest.min.js"),
     Script(
