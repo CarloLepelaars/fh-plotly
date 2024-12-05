@@ -37,7 +37,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -s
+          pytest -s -m "not e2e"
 
       - name: Build wheel
         run: |
@@ -47,3 +47,27 @@ jobs:
       - name: Install built wheel
         run: |
           uv pip install dist/*.whl
+
+  e2e:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ '3.10', '3.11', '3.12' ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install deps
+        run: uv sync --all-extras
+      - id: cache-browser
+        uses: actions/cache@v4
+        with:
+          path: /home/runner/.cache/ms-playwright
+          key: ${{ runner.os }}-browser
+      - name: Set up playwright
+        run: uv run playwright install chromium --with-deps
+      - name: Run e2e tests
+        run: uv run pytest -m e2e

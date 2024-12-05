@@ -1,6 +1,7 @@
 import fastcore
 import pandas as pd
 import plotly.express as px
+import pytest
 
 from fh_plotly import plotly2fasthtml
 
@@ -43,3 +44,13 @@ def test_3d_surface():
     html_div = plotly2fasthtml(fig)
     assert html_div is not None
     assert isinstance(html_div, fastcore.xml.FT)
+
+
+@pytest.mark.e2e
+def test_callback(callback_server, page):
+    page.goto("localhost:5001")
+    click_layer = page.locator("svg.main-svg rect.nsewdrag.drag")
+    click_layer.click(position={"x": 630, "y": 250})
+    callback_text = page.get_by_test_id("callback-display").inner_text()
+
+    assert callback_text.startswith("Server received click on (3.6, 5.0) from plot")
