@@ -20,13 +20,15 @@ dev = [
     "pandas>=2.2.2",
     "numpy>=2.0.1",
     "fastcore>=1.7.1",
+    "pytest-playwright>=0.6.2",
+    "requests>=2.32.3",
 ]
 
 [tool.ruff]
 line-length = 300
 
 [tool.ruff.lint]
-ignore = ["I001","F403", "F405", "F811"] 
+ignore = ["I001","F403", "F405", "F811"]
 select = ["E", "F", "I"]
 
 [tool.ruff.lint.per-file-ignores]
@@ -35,6 +37,11 @@ select = ["E", "F", "I"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[tool.uv]
+dev-dependencies = [
+    "playwright>=1.49.0",
+]
 
 [build-system]
 requires = ["setuptools>=61.0"]
