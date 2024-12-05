@@ -38,7 +38,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -s
+          pytest -s -m "not e2e"
 
       - name: Build wheel
         run: |
@@ -61,6 +61,8 @@ jobs:
         uses: astral-sh/setup-uv@v4
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Install deps
+        run: uv sync --all-extras
       - id: cache-browser
         uses: actions/cache@v4
         with:
