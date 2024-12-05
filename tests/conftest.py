@@ -2,12 +2,13 @@ import multiprocessing
 from time import sleep
 
 import pytest
-import requests
 import uvicorn
 
 
 @pytest.fixture(scope="module")
 def callback_server():
+    import requests
+
     process = multiprocessing.Process(
         target=uvicorn.run,
         args=("examples.callback_app:app",),

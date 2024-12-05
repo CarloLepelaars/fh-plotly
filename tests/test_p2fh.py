@@ -2,7 +2,6 @@ import fastcore
 import pandas as pd
 import plotly.express as px
 import pytest
-from playwright.sync_api import Page
 
 from fh_plotly import plotly2fasthtml
 
@@ -48,7 +47,7 @@ def test_3d_surface():
 
 
 @pytest.mark.e2e
-def test_callback(callback_server, page: Page):
+def test_callback(callback_server, page):
     page.goto("localhost:5001")
     click_layer = page.locator("svg.main-svg rect.nsewdrag.drag")
     click_layer.click(position={"x": 630, "y": 250})
