@@ -1,6 +1,6 @@
 [project]
 name = "fh-plotly"
-version = "0.2.0"
+version = "0.2.1"
 description = "Plotly in FastHTML"
 authors = [
     {name = "Carlo Lepelaars", email = "info@carlolepelaars.nl"},
@@ -14,12 +14,14 @@ dependencies = [
     "plotly>=5.23.0",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "pytest>=8.3.2",
     "pandas>=2.2.2",
     "numpy>=2.0.1",
-    "fastcore>=1.7.1"
+    "fastcore>=1.7.1",
+    "pytest-playwright>=0.6.2",
+    "requests>=2.32.3",
 ]
 
 [tool.ruff]
@@ -42,9 +44,3 @@ markers = [
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
-
-[dependency-groups]
-dev = [
-    "pytest-playwright>=0.6.2",
-    "requests>=2.32.3",
-]

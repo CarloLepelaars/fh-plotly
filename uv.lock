@@ -168,39 +168,35 @@ wheels = [
 
 [[package]]
 name = "fh-plotly"
-version = "0.2.0"
+version = "0.2.1"
 source = { editable = "." }
 dependencies = [
     { name = "plotly" },
     { name = "python-fasthtml" },
 ]
 
-[package.optional-dependencies]
+[package.dev-dependencies]
 dev = [
     { name = "fastcore" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "pytest" },
-]
-
-[package.dev-dependencies]
-dev = [
     { name = "pytest-playwright" },
     { name = "requests" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "fastcore", marker = "extra == 'dev'", specifier = ">=1.7.1" },
-    { name = "numpy", marker = "extra == 'dev'", specifier = ">=2.0.1" },
-    { name = "pandas", marker = "extra == 'dev'", specifier = ">=2.2.2" },
     { name = "plotly", specifier = ">=5.23.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.3.2" },
     { name = "python-fasthtml", specifier = ">=0.4.0" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "fastcore", specifier = ">=1.7.1" },
+    { name = "numpy", specifier = ">=2.0.1" },
+    { name = "pandas", specifier = ">=2.2.2" },
+    { name = "pytest", specifier = ">=8.3.2" },
     { name = "pytest-playwright", specifier = ">=0.6.2" },
     { name = "requests", specifier = ">=2.32.3" },
 ]

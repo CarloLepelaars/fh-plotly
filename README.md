@@ -51,7 +51,7 @@ Make sure to do an editable install with dev dependencies when working on contri
 
 ```bash
 pip install uv
-uv pip install -e ".[dev]"
+uv sync
 ```
 
 To run tests:
