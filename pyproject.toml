@@ -19,9 +19,7 @@ dev = [
     "pytest>=8.3.2",
     "pandas>=2.2.2",
     "numpy>=2.0.1",
-    "fastcore>=1.7.1",
-    "pytest-playwright>=0.6.2",
-    "requests>=2.32.3",
+    "fastcore>=1.7.1"
 ]
 
 [tool.ruff]
@@ -44,3 +42,9 @@ markers = [
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pytest-playwright>=0.6.2",
+    "requests>=2.32.3",
+]
