@@ -37,10 +37,8 @@ select = ["E", "F", "I"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
-
-[tool.uv]
-dev-dependencies = [
-    "playwright>=1.49.0",
+markers = [
+    "e2e: end-to-end tests",
 ]
 
 [build-system]

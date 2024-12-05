@@ -1,6 +1,8 @@
 import fastcore
 import pandas as pd
 import plotly.express as px
+import pytest
+from playwright.sync_api import Page
 
 from fh_plotly import plotly2fasthtml
 
@@ -45,5 +47,11 @@ def test_3d_surface():
     assert isinstance(html_div, fastcore.xml.FT)
 
 
-def test_callback(server, page):
-    page.navigate("localhost:5001")
+@pytest.mark.e2e
+def test_callback(callback_server, page: Page):
+    page.goto("localhost:5001")
+    click_layer = page.locator("svg.main-svg rect.nsewdrag.drag")
+    click_layer.click(position={"x": 630, "y": 250})
+    callback_text = page.get_by_test_id("callback-display").inner_text()
+
+    assert callback_text.startswith("Server received click on (3.6, 5.0) from plot")
