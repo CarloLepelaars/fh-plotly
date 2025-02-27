@@ -2,11 +2,12 @@ from dataclasses import dataclass
 from typing import Optional
 from uuid import uuid4
 from plotly.io import to_json
+from plotly.offline._plotlyjs_version import __plotlyjs_version__ as plotlyjs_version
 from fasthtml.common import Div, Script
 
 
 plotly_headers = [
-    Script(src="https://cdn.plot.ly/plotly-latest.min.js"),
+    Script(src=f"https://cdn.plot.ly/plotly-{plotlyjs_version}.min.js"),
     Script(
         """
     const fhPlotlyRegisterOnClick = (plotId, hxPostEndpoint, hxTarget) => {
