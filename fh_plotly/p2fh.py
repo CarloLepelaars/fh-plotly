@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import json
 from typing import Optional
 from uuid import uuid4
 from plotly.io import to_json
@@ -28,7 +29,7 @@ plotly_headers = [
 ]
 
 
-def plotly2fasthtml(chart, callbacks=None):
+def plotly2fasthtml(chart, callbacks=None, js_options={}):
     chart_id = f"uniq-{uuid4()}"
     chart_json = to_json(chart)
     if callbacks:
@@ -39,7 +40,7 @@ def plotly2fasthtml(chart, callbacks=None):
         Script(
             f"""
         var plotly_data = {chart_json};
-        Plotly.newPlot('{chart_id}', plotly_data.data, plotly_data.layout);
+        Plotly.newPlot('{chart_id}', plotly_data.data, plotly_data.layout, {json.dumps(js_options)});
     """
         ),
         *(callbacks or []),
