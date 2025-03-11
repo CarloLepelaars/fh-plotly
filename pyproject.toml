@@ -1,6 +1,6 @@
 [project]
 name = "fh-plotly"
-version = "0.2.3"
+version = "0.2.4"
 description = "Plotly in FastHTML"
 authors = [
     {name = "Carlo Lepelaars", email = "info@carlolepelaars.nl"},
